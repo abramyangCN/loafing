@@ -96,7 +96,7 @@ function App() {
     <div className='App'>
       <div>
         <p>
-          {today} {greeting()}，摸鱼人！今天也一定不要忘记摸鱼哦！ 有事没事起身去茶水间，去厕所，去廊道走走。 别老在工位上坐着，钱是老板的，但命是自己的。
+          {today}{greeting()}摸鱼人！今天也一定不要忘记摸鱼哦！ 有事没事起身去茶水间，去厕所，去廊道走走。 别老在工位上坐着，钱是老板的，但命是自己的。
         </p>
         {weekNotice()}
         {qingmingTime.second > 0 ? <p>距离【清明】假期还有{qingmingTime.day}天。</p> : null}
