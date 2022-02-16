@@ -63,18 +63,41 @@ function weekNotice() {
     );
   }
   return (
-    <p>
-      {weekDay}了，过去{day === 3 ? `一半` : `${day}天`}
-      了， 距离周六还有 {6 - day} 天。
-    </p>
+    <>
+      <p>
+        {weekDay}了，过去{day === 3 ? `一半` : `${day}天`}
+        了， 距离周六还有 {6 - day} 天。
+      </p>
+    </>
   );
+}
+
+function greeting() {
+  const hour = new Date().getHours();
+  if (hour < 6) {
+    return '早上好！';
+  }
+  if (hour < 12) {
+    return '上午好！';
+  }
+  if (hour < 14) {
+    return '中午好！';
+  }
+  if (hour < 18) {
+    return '下午好！';
+  }
+  if (hour < 24) {
+    return '晚上好！';
+  }
 }
 
 function App() {
   return (
     <div className='App'>
       <div>
-        <p>{today} 早上好，摸鱼人！今天也一定不要忘记摸鱼哦！ 有事没事起身去茶水间，去厕所，去廊道走走。 别老在工位上坐着，钱是老板的，但命是自己的。</p>
+        <p>
+          {today} {greeting()}，摸鱼人！今天也一定不要忘记摸鱼哦！ 有事没事起身去茶水间，去厕所，去廊道走走。 别老在工位上坐着，钱是老板的，但命是自己的。
+        </p>
         {weekNotice()}
         {qingmingTime.second > 0 ? <p>距离【清明】假期还有{qingmingTime.day}天。</p> : null}
         {laborTime.second > 0 ? <p>距离【五一】假期还有{laborTime.day}天。</p> : null}
